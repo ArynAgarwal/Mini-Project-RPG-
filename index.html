@@ -45,7 +45,6 @@
         </button>
     </div>
 
-
     <script type="text/javascript">
         const resultEl = document.getElementById('result');
         const lengthEl = document.getElementById('length');
@@ -56,6 +55,7 @@
         const generateEl = document.getElementById('generate');
         const clipboard = document.getElementById('clipboard');
 
+        
         const randomFunc = {
             lower: getRandomLower,
             upper: getRandomUpper,
@@ -72,6 +72,7 @@
             textarea.value = password;
             document.body.appendChild(textarea);
             textarea.select();
+            
             document.execCommand('copy');
             textarea.remove();
             alert('Password is copied to your clipboard');
@@ -87,6 +88,7 @@
             resultEl.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
         });
 
+        
         function generatePassword(lower, upper, number, symbol, length) {
             let generatedPassword = '';
             const typesCount = lower + upper + number + symbol;
